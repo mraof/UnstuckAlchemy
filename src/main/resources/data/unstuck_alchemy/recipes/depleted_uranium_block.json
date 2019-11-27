@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "iii",
+    "iii",
+    "iii"
+  ],
+  "key": {
+    "i": {
+      "item": "unstuck_alchemy:depleted_uranium_ingot"
+    }
+  },
+  "result": {
+    "item": "unstuck_alchemy:depleted_uranium_block"
+  }
+}

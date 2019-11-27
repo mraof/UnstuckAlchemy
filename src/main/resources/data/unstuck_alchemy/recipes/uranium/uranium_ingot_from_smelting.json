@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:smelting",
+  "ingredient": {
+    "item": "unstuck_alchemy:uranium_ore"
+  },
+  "result": "unstuck_alchemy:uranium_ingot",
+  "experience": 0.7,
+  "cookingtime": 200
+}

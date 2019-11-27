@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "i",
+    "i"
+  ],
+  "key": {
+    "i": {
+      "item": "unstuck_alchemy:uranium_ingot"
+    }
+  },
+  "result": {
+    "item": "unstuck_alchemy:uranium_fuel_rod"
+  }
+}

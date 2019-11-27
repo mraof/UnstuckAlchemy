@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "unstuck_alchemy:depleted_uranium_block"
+    }
+  ],
+  "result": {
+    "item": "unstuck_alchemy:depleted_uranium_ingot",
+    "count": 9
+  }
+}

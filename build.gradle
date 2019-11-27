@@ -2,6 +2,7 @@ plugins {
     id 'fabric-loom'
     id 'maven-publish'
     id "org.jetbrains.kotlin.jvm"
+    id "com.wynprice.cursemaven" version "2.1.1"
 }
 
 sourceCompatibility = JavaVersion.VERSION_1_8
@@ -12,11 +13,19 @@ version = project.mod_version
 group = project.maven_group
 
 minecraft {
+    extractJars = true
 }
 
 
 repositories {
     maven { url = "http://maven.fabricmc.net/" }
+    maven { url "https://minecraft.curseforge.com/api/maven" }
+    // LibCD
+    maven { url 'http://server.bbkr.space:8081/artifactory/libs-release' }
+    maven {
+        name = 'sponge'
+        url = 'https://repo.spongepowered.org/maven'
+    }
 }
 
 dependencies {
@@ -29,9 +38,23 @@ dependencies {
     modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
 
     modImplementation "net.fabricmc:fabric-language-kotlin:${project.fabric_kotlin_version}"
+    modCompile "me.shedaniel:RoughlyEnoughItems:3.2.8+build.51"
 
     // PSA: Some older mods, compiled on Loom 0.2.1, might have outdated Maven POMs.
     // You may need to force-disable transitiveness on them.
+
+    // Include the mods in /mods/ while testing
+    //modRuntime fileTree(dir: 'mods', include: '*.jar')
+    modCompile 'RebornCore:RebornCore-1.14.4:+'
+    modCompile 'TechReborn:TechReborn-1.14.4:3.0.20+build.264'
+    runtime 'teamreborn:energy:0.0.7'
+    runtime 'org.spongepowered:configurate-hocon:3.6'
+    modCompile 'materialisation:Materialisation:release'
+    modCompile 'io.github.cottonmc:cotton:1.0.0'
+}
+
+sourceSets {
+    main.java.srcDirs += "src/main/kotlin"
 }
 
 processResources {

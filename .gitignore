@@ -3,6 +3,7 @@
 .gradle/
 build/
 out/
+*.log
 
 # idea
 
@@ -15,3 +16,7 @@ out/
 
 run/
 minecraft/
+mods/
+
+# floobits
+.floo

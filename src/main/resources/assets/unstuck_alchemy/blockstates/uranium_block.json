@@ -1,0 +1,5 @@
+{
+  "variants": {
+    "": { "model": "unstuck_alchemy:block/uranium_block" }
+  }
+}

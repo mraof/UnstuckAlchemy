@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "unstuck_alchemy:uranium_fuel_rod"
+    }
+  ],
+  "result": {
+    "item": "unstuck_alchemy:uranium_ingot",
+    "count": 2
+  }
+}
