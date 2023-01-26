@@ -1,0 +1,6 @@
+{
+  "item": [
+    {"id": "depleted_uranium_ingot", "elements": [["metal", 144], ["precious", 9], ["entropy", 504]]},
+    {"id": "uranium_ingot", "elements": [["metal", 144], ["precious", 9]]}
+  ]
+}

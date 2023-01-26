@@ -1,0 +1,8 @@
+{
+  "tag": [
+    {"id": "ingots/copper", "elements": [["metal", 72]]},
+    {"id": "ingots/tin", "elements": [["metal", 72]]},
+    {"id": "ingots/nickel", "elements": [["metal", 72], ["precious", 27]]},
+    {"id": "ingots", "elements": [["metal", 72], ["fixme", 72]]}
+  ]
+}

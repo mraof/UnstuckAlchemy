@@ -1,0 +1,6 @@
+{
+  "item": [
+    {"id": "copper_ingot", "elements": [["metal", 72]]},
+    {"id": "tin_ingot", "elements": [["metal", 72]]}
+  ]
+}

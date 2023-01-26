@@ -1,0 +1,8 @@
+{
+  "item": [
+    {"id": "seed", "elements":  [["plant", 12]]}
+  ],
+  "fluid": [
+    {"id": "creosote", "elements": [["carbon", 1]]}
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "required": true,
+  "package": "com.mraof.unstuckalchemy.mixin",
+  "compatibilityLevel": "JAVA_8",
+  "mixins": [
+    "ServerResourceManagerMixin",
+    "IngredientHooks",
+    "BrewingRecipeRegistryMixin"
+  ],
+  "client": [
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}

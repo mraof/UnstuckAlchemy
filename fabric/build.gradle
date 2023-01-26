@@ -1,0 +1,63 @@
+plugins {
+    id "com.github.johnrengelman.shadow" version "7.0.0"
+}
+
+architectury {
+    platformSetupLoomIde()
+    fabric()
+}
+
+configurations {
+    common
+    shadowCommon
+    compileClasspath.extendsFrom common
+    runtimeClasspath.extendsFrom common
+    developmentFabric.extendsFrom common
+}
+
+dependencies {
+    modImplementation "net.fabricmc:fabric-loader:${rootProject.fabric_loader_version}"
+    modApi "net.fabricmc.fabric-api:fabric-api:${rootProject.fabric_api_version}"
+    // Remove the next line if you don't want to depend on the API
+    modApi "me.shedaniel:architectury-fabric:${rootProject.architectury_version}"
+    modImplementation "net.fabricmc:fabric-language-kotlin:1.7.0+kotlin.1.6.0"
+
+    modCompileOnly "me.shedaniel:RoughlyEnoughItems-api:5.11.186"
+    modRuntimeOnly "me.shedaniel:RoughlyEnoughItems:5.11.186"
+    modImplementation 'RebornCore:RebornCore-1.16:+'
+    modImplementation 'TechReborn:TechReborn-1.16:+'
+
+    common(project(path: ":common", configuration: "dev")) {
+        transitive = false
+    }
+
+    shadowCommon(project(path: ":common", configuration: "transformProductionFabric")) {
+        transitive = false
+    }
+}
+
+processResources {
+    inputs.property "version", project.version
+
+    filesMatching("fabric.mod.json") {
+        expand "version": project.version
+    }
+}
+
+shadowJar {
+    configurations = [project.configurations.shadowCommon]
+    classifier "dev-shadow"
+}
+
+remapJar {
+    dependsOn(shadowJar)
+    input.set(shadowJar.archivePath)
+    classifier "fabric"
+}
+repositories {
+    mavenCentral()
+    maven { url "https://minecraft.curseforge.com/api/maven" }
+    //LibCD
+    maven { url 'https://server.bbkr.space/artifactory/libs-release' }
+    maven { url "https://maven.shedaniel.me/" }
+}
